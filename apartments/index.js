@@ -5,12 +5,7 @@ let apt1 = {
     windows: 0, 
     rent: 4500, 
     unit: '1A',
-    // lease: function(tenant){
-    // if (this.tenants.length === this.bedrooms) return `${this.unit} is already full!`
-    // this.tenants.push(tenant)
-    // console.log(tenant.name, 'has rented out', this.unit)
-    // },
-    // tenants:[],
+    tenants: []
 }
 
 let apt2 = {
@@ -20,8 +15,7 @@ let apt2 = {
     windows: 2, 
     rent: 1500, 
     unit: '1B',
-    // lease: 
-    // tenants:[]
+    tenants: []
 }
 
 let apt3 = {
@@ -30,8 +24,8 @@ let apt3 = {
     bathrooms: 3, 
     windows: 2, 
     rent: 2400, 
-    unit: '1C'
-    // tenants: []
+    unit: '1C',
+    tenants: []
 }
 
 let apt4 = {
@@ -40,8 +34,8 @@ let apt4 = {
     bathrooms: 0, 
     windows: 0, 
     rent: 900, 
-    unit: '1D'
-    // tenants: []
+    unit: '1D',
+    tenants: []
 
 }
 
@@ -65,8 +59,17 @@ let building = {
     streetAddress: '74 N 7th Street, Brooklyn NY 11249',
     laundry: false,
     allowsPets: false,
+    lease: function(apt, tenant){
+        if (apt.tenants.length === apt.bedrooms) return `${apt.unit} is already full!`
+        apt.tenants.push(tenant)
+        console.log(tenant.name, 'has rented out', apt.unit)
+        },
     apartments: [apt1, apt2, apt3]
 }
+
+//when you have multiple arguments, they go in order of object hierarchy
+
+//building.lease(apt, tenant)
 
 
 // [name of the acting object].[action it is taking](target)
