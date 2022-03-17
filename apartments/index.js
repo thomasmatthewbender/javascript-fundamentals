@@ -4,8 +4,12 @@ let apt1 = {
     bathrooms: 3, 
     windows: 0, 
     rent: 4500, 
-    unit: '1A'
-    // tenants: []
+    unit: '1A',
+    // lease: function(tenant){
+    //this.tenants.push(tenant)
+    //console.log(tenant.name, 'has rented out', this.unit)
+    // },
+    // tenants:[],
 }
 
 let apt2 = {
@@ -14,8 +18,9 @@ let apt2 = {
     bathrooms: 1, 
     windows: 2, 
     rent: 1500, 
-    unit: '1B'
-    // tenants:
+    unit: '1B',
+    // lease: 
+    // tenants:[]
 }
 
 let apt3 = {
@@ -25,7 +30,7 @@ let apt3 = {
     windows: 2, 
     rent: 2400, 
     unit: '1C'
-    // tenants:
+    // tenants: []
 }
 
 let apt4 = {
@@ -35,7 +40,8 @@ let apt4 = {
     windows: 0, 
     rent: 900, 
     unit: '1D'
-    // tenants:
+    // tenants: []
+
 }
 
 let tenant1 = {
@@ -61,3 +67,9 @@ let building = {
     apartments: [apt1, apt2, apt3]
 }
 
+
+// [name of the acting object].[action it is taking](target)
+
+// SVO
+
+//apt.lease(tenant)
